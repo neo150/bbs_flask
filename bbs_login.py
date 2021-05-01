@@ -5,6 +5,7 @@ USERLIST = {
     'taro': 'aaa',
     'jiro': 'bbb',
     'sabu': 'ccc',
+    'siro': 'ddd',
 }
 
 # ログインしているか調べる

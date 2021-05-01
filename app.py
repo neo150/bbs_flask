@@ -32,7 +32,7 @@ def try_login():
     pw = request.form.get('pw', '')
     # ログインに成功したれらルートページへ飛ぶ
     if bbs_login.try_login(user, pw):
-        redirect('/')
+        return redirect('/')
     return show_msg('ログインに失敗しました')
 
 # ログアウト処理
