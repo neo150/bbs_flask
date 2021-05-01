@@ -13,7 +13,7 @@ app.secret_key = 'jfsrtrifsjfj'
 @app.route('/')
 def index():
     if not bbs_login.is_login():
-        return redirect('/login')
+        return redirect('./login')
     return render_template('index.html',
                            user=bbs_login.get_user(),
                            data=bbs_data.load_data())
@@ -32,7 +32,7 @@ def try_login():
     pw = request.form.get('pw', '')
     # ログインに成功したれらルートページへ飛ぶ
     if bbs_login.try_login(user, pw):
-        return redirect('/')
+        return redirect('./')
     return show_msg('ログインに失敗しました')
 
 # ログアウト処理
@@ -50,7 +50,7 @@ def logout():
 def write():
     # ログインが必要
     if not bbs_login.is_login():
-        return redirect('/login')
+        return redirect('./login')
 
     ta = request.form.get('ta', '')
     if ta == '':
