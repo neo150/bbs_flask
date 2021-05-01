@@ -60,7 +60,7 @@ def write():
         user=bbs_login.get_user(),
         text=ta
     )
-    return redirect('/')
+    return redirect('./')
 
 
 def show_msg(msg):
