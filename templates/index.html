@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<h1>{{user}}</h1>
+
+<form action="/write" method="post">
+    <textarea name="ta" id="ta" cols="60" rows="4"></textarea>
+    <input type="submit" value="書き込む">
+
+</form>
+
+{% for i in data %}
+<div class="box">
+    <p class="box_h">
+        {{i.name}} - {{i.date}}
+    </p>
+    <p>{{i.text}}</p>
+</div>
+</div>
+{% endfor %}
+
+{% endblock %}
